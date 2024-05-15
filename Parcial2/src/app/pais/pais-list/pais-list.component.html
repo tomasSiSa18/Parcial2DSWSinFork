@@ -1,0 +1,25 @@
+<div class="container-fluid row">
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Capital</th>
+            <th scope="col">Año de Conformacion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pais of paises">
+            <th scope="row">{{pais.id}}</th>
+            <td>{{pais.name}}</td>
+            <td>{{pais.capital}}</td>
+            <td>{{pais.formation_year}}</td>
+          </tr>
+        </tbody>
+    </table>
+
+</div>
+<div class="container-fluid row">
+    <p>El pais mas antiguo listado es {{paisMinimo.name}} y fue conformado en {{paisMinimo.formation_year}}</p>
+</div>
