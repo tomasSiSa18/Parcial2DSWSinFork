@@ -1,24 +1,39 @@
+<div class="row-5 banner">
+
+    <p class="text-center">Paises del Mundo</p>
+
+</div>
+
 <div class="container-fluid row">
     <div class="col">
 
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Capital</th>
-                <th scope="col">Año de Conformacion</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let pais of paises" (click)="onSelected(pais)">
-                <th scope="row">{{pais.id}}</th>
-                <td>{{pais.name}}</td>
-                <td>{{pais.capital}}</td>
-                <td>{{pais.formation_year}}</td>
-              </tr>
-            </tbody>
-        </table>
+        <div class="row">
+
+            <table class="table">
+                <thead>
+                  <tr class="table-warning">
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Capital</th>
+                    <th scope="col">Año de Conformacion</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-secondary" *ngFor="let pais of paises" (click)="onSelected(pais)">
+                    <th scope="row">{{pais.id}}</th>
+                    <td>{{pais.name}}</td>
+                    <td>{{pais.capital}}</td>
+                    <td>{{pais.formation_year}}</td>
+                  </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="container-fluid row">
+            <p>El pais mas antiguo listado es {{paisMinimo.name}} y fue conformado en {{paisMinimo.formation_year}}</p>
+        </div>
+
 
     </div>
 
@@ -27,7 +42,4 @@
     </div>
 
 
-</div>
-<div class="container-fluid row">
-    <p>El pais mas antiguo listado es {{paisMinimo.name}} y fue conformado en {{paisMinimo.formation_year}}</p>
 </div>
