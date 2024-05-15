@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Pais } from '../pais';
 
 @Component({
   selector: 'app-pais-detail',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './pais-detail.component.css'
 })
 export class PaisDetailComponent {
+
+  @Input() selectedPais!: Pais;
 
 }

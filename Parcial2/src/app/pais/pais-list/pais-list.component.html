@@ -1,23 +1,31 @@
 <div class="container-fluid row">
+    <div class="col">
 
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Capital</th>
-            <th scope="col">Año de Conformacion</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let pais of paises">
-            <th scope="row">{{pais.id}}</th>
-            <td>{{pais.name}}</td>
-            <td>{{pais.capital}}</td>
-            <td>{{pais.formation_year}}</td>
-          </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Capital</th>
+                <th scope="col">Año de Conformacion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pais of paises" (click)="onSelected(pais)">
+                <th scope="row">{{pais.id}}</th>
+                <td>{{pais.name}}</td>
+                <td>{{pais.capital}}</td>
+                <td>{{pais.formation_year}}</td>
+              </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="col" *ngIf="selected">
+        <app-pais-detail [selectedPais]="selectedPais"></app-pais-detail>
+    </div>
+
 
 </div>
 <div class="container-fluid row">

@@ -9,6 +9,9 @@ import { PaisService } from '../pais.service';
 })
 export class PaisListComponent implements OnInit{
 
+  selectedPais!: Pais;
+  selected: Boolean = false;
+
   paises: Array<Pais> = [];
   anioMinimo: number = 0;
   paisMinimo!: Pais;
@@ -47,6 +50,11 @@ export class PaisListComponent implements OnInit{
       
     this.getPaises();
 
+  }
+
+  onSelected(pais: Pais){
+    this.selected = true;
+    this.selectedPais = pais;
   }
 
 }
